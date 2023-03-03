@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>44861435796-og8tf0gkkmj54a8tkfagero5npvnj3bf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.44861435796-og8tf0gkkmj54a8tkfagero5npvnj3bf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBBLYBjiO-SBKa6oFjYesRI_hL5bHX9fOw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>44861435796</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.salonManager</string>
+	<key>PROJECT_ID</key>
+	<string>salon-manager-205db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>salon-manager-205db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:44861435796:ios:eedee8b3502e4bb402e981</string>
+</dict>
+</plist>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "44861435796",
+    "project_id": "salon-manager-205db",
+    "storage_bucket": "salon-manager-205db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44861435796:android:2adee197a144b3cf02e981",
+        "android_client_info": {
+          "package_name": "com.example.salon_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44861435796-ooq1fru6fvcvo6ka5plpp24m53s5slbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAatdp3o96y6CtygBYJk-4wAr7GwGA3aXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44861435796-ooq1fru6fvcvo6ka5plpp24m53s5slbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:salon_manager/Client_managment/Client_Registration_Form.dart';
+import 'package:salon_manager/Client_managment/Search_Client.dart';
+import 'package:salon_manager/Service_management/Service_Selection.dart';
+import 'firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+
+void main() async{
+  
+  WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
@@ -10,7 +22,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+
+ const appTitle="salon";
+
+
+    return MaterialApp(debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -23,8 +39,16 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+      
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+     home: Scaffold(
+      // use in seprate activity
+        // appBar: AppBar(
+        // title: const Text(appTitle),
+        // ),
+        body:ServiceSelection("sameer 1333","menSalon")
+      ),
+      
     );
   }
 }
@@ -48,19 +72,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  
+  CollectionReference _collectionRef =
+    FirebaseFirestore.instance.collection('collection');
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+Future<void> getData() async {
+    // Get docs from collection reference
+    QuerySnapshot querySnapshot = await _collectionRef.get();
 
+    // Get data from docs and convert map to List
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    print(allData);
+}
+ final firebaseInstance=FirebaseFirestore.instance;
+       CollectionReference salons =
+    FirebaseFirestore.instance.collection('salons');
+
+Future<void> getCollectionData() async {
+    // Get docs from collection reference
+    QuerySnapshot querySnapshot = await salons.get();
+
+    // Get data from docs and convert map to List
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+   
+      // print(querySnapshot.docs.);
+               DocumentReference  docRef= salons.doc("fitness storm");
+                      
+                      //docRef..then((value) => print("---> ${value.id}") );
+                  
+                  docRef.snapshots().first;
+                     
+            print("got data : + ${docRef.collection("owners").doc("fs_owner1").get().then((value) => print(value))}");
+
+
+            print("got data : + ${docRef.collection("owners").get().then((value) => print(value.docs[0].id))}");
+
+}
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -69,6 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    
+    
+    
+    getCollectionData();
+    
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -99,14 +152,14 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '10',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
