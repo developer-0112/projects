@@ -1,0 +1,36 @@
+[33mcommit 581876b76487a9e08b6aeb8f11416ab3822822ca[m[33m ([m[1;36mHEAD -> [m[1;32mtotalservicefinal_popup[m[33m, [m[1;31mproject_origin/master[m[33m, [m[1;32mtotalservice_popup[m[33m, [m[1;32mmaster[m[33m, [m[1;32mcheckout[m[33m)[m
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Fri Mar 3 11:14:31 2023 +0530
+
+    commiting newchanges
+
+[33mcommit 120c6dba94a8246f6070cfaa7cec0d537481eeca[m
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Sun Jan 1 20:13:54 2023 +0530
+
+    adding salon_manager app
+
+[33mcommit 442d555a58c0001aa4768cded9829ece1fd74531[m
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Sun Jan 1 20:08:00 2023 +0530
+
+    deleating gym app
+
+[33mcommit e41185da6a7c3717ce5b2da3c364242896d7ca29[m
+Merge: a1d6b20 0e537ca
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Sun Jan 1 20:04:52 2023 +0530
+
+    Merge branch 'master' of https://github.com/developer-0112/projects
+
+[33mcommit a1d6b20c0b6a4ca032e8a1cba7b3e097a70bc0bc[m
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Sun Jan 1 19:57:14 2023 +0530
+
+    commiting gym manager with only client registration page
+
+[33mcommit 0e537caa052ab79ae9adf7568428bdc853e7b5cb[m
+Author: sameer-tiwari <sameertiwari0112@gmail.com>
+Date:   Sun Jan 1 19:32:15 2023 +0530
+
+    commiting gym_app with only client registration page
