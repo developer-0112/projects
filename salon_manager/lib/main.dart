@@ -46,7 +46,9 @@ class MyApp extends StatelessWidget {
         // appBar: AppBar(
         // title: const Text(appTitle),
         // ),
-        body:ServiceSelection("sameer 1333","menSalon")
+        body:ServiceSelection(clientId: "ram_1111111111",salonType: "menSalon")
+     
+     // body: MyHomePage(title: "sam ap"),
       ),
       
     );

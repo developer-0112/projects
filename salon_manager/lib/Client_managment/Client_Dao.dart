@@ -15,6 +15,42 @@ CollectionReference collectionRef = FirebaseFirestore.instance.collection("salon
 return collectionRef;
 }
 
+
+
+saveClientServiceDetails(clientId,serviceDetails) async {
+ 
+ // should be assigned like this 
+//  serviceDetails=[{
+//   'sameer master':{
+//    "services": "chethe hair , faltu cutting",
+//       "amount": 300,
+//       "date": "2/1/2023" 
+//       }
+//       }
+      
+//       ];
+ var ref=_getCollectionReference("clients"); 
+  
+  // adds data to array automatically without specifyng index
+ ref.doc(clientId).update({
+  'services': FieldValue.arrayUnion(serviceDetails),
+});
+
+      //   await  ref.get().then((QuerySnapshot querySnapshot) {
+ 
+      //   querySnapshot.docs.forEach((doc) {
+
+      // if(clientId==doc.id){ print('Found Data for $clientId : ${doc.data()}');
+ 
+      //   }}
+      //   );
+
+      //   });
+
+}
+
+
+
 registerNewClient(ClientDetailsHolder newClientDetails) async {
  
  var ref=_getCollectionReference("clients"); 
@@ -42,7 +78,7 @@ registerNewClient(ClientDetailsHolder newClientDetails) async {
          await  ref.get().then((QuerySnapshot querySnapshot) {
         querySnapshot.docs.forEach((doc) {
           clientList.add(doc.id);
-            print(doc.id);
+             print(doc.id);
         });
     });
               }catch(e){print("Exception in CLientDao : "+e.toString()); return ["Try Agaian ,No CLient Found "]; }
@@ -52,7 +88,28 @@ return clientList;
 
 }
 
+fetchClientUsingClientId(clientId) async {
+    var data=null;
 
+   var clientData;
+              try{
+              var ref= await _getCollectionReference("clients");
+              
+         await  ref.get().then((QuerySnapshot querySnapshot) {
+        querySnapshot.docs.forEach((doc) {
+  
+              if(clientId==doc.id){ print('Found Data for $clientId : ${doc.data()}');
+               data= doc.data(); 
+              }
+        });
+    });
+              }catch(e){print("Exception in CLientDao : "+e.toString()); return ["Try Agaian ,No CLient Found "]; }
+
+
+return data;
+              
+
+}
 
     
 }

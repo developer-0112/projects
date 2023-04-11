@@ -1,10 +1,8 @@
-import 'dart:collection';
+ 
 import 'dart:io';
-import 'Client_Dao.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Client_Dao.dart'; 
 import 'package:flutter/material.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart'; 
 import 'package:date_time_picker/date_time_picker.dart';
 
 class ClientRegistrationForm extends StatefulWidget {
@@ -241,13 +239,30 @@ class ClientDetailsHolder {
   String lastName = "";
   int mobileNo = 0000;
 
-  Map service = {
-    "By Ramesh ": {
-      "service details": "hair spa",
-      "paisa": 100,
+
+// pasisa changed to amount
+  // Map service = {
+  //   "Ramesh stylist": {
+  //     "services": "hair spa",
+  //     "amount": 100,
+  //     "date": "2/1/2023"
+  //   }
+  // } as Map;
+
+// service ko map  s array bnare hai
+  List service = [
+{
+      "Ramesh stylist": {
+      "services": "hair spa",
+      "amount": 100,
       "date": "2/1/2023"
     }
-  } as Map;
+}
+
+   ] ;
+
+
+
 
 // Task
 // default values to dob and MaterialPage
@@ -256,7 +271,7 @@ class ClientDetailsHolder {
 // married not married 
 
 
-
+  int previousDues=0;
   late DateTime dob;
   late DateTime marriageAnniversary;
 
@@ -272,6 +287,7 @@ class ClientDetailsHolder {
       'service': service,
       'dob': dob,
       'gender': gender,
+      'previousDues':previousDues,
       'marriageAnniversary': marriageAnniversary
     };
   }
